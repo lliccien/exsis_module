@@ -1,0 +1,7 @@
+services:
+  logger.channel.exsismodule:
+    parent: logger.channel_base
+    arguments: ['exsismodule']
+  exsismodule.user:
+    class: Drupal\exsismodule\Services\UserService
+    arguments: ['@database']

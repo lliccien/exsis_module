@@ -1,0 +1,5 @@
+name: 'ExsisModule'
+type: module
+description: 'Test Exsis'
+core: 8.x
+package: 'Custom'

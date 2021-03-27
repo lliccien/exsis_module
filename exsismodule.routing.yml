@@ -1,0 +1,29 @@
+exsismodule.exsis_controller_registerUsers:
+  path: '/exsis/form'
+  defaults:
+    _controller: '\Drupal\exsismodule\Controller\ExsisController::registerUsers'
+  requirements:
+    _permission: 'access content'
+exsismodule.exsis_controller_getJsonUsers:
+  path: '/exsis/data'
+  defaults:
+    _controller: '\Drupal\exsismodule\Controller\ExsisController::getJsonUsers'
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+exsismodule.exsis_user_form:
+  path: '/exsismodule/form/exsis_user'
+  defaults:
+    _form: '\Drupal\exsismodule\Form\ExsisUserForm'
+    _title: 'ExsisUserForm'
+  requirements:
+    _access: 'TRUE'
+exsismodule.exsis_user_modal_form:
+  path: '/exsismodule/form/exsis_user_modal'
+  defaults:
+    _form: '\Drupal\exsismodule\Form\ExsisUserModalForm'
+    _title: 'ExsisUserModalForm'
+  requirements:
+    _access: 'TRUE'
+
+

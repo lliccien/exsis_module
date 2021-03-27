@@ -1,0 +1,70 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the my_users module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function exsismodule_install() {
+  \Drupal::messenger()->addStatus('installing module Exsis Module');
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function exsismodule_uninstall() {
+  drupal_uninstall_schema('example_users');
+}
+
+/**
+ * Implements hook_schema().
+ */
+function exsismodule_schema(): array
+{
+  $schema['example_users'] = [
+    'description' => 'Table log login register.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique record ID.',
+      ],
+      'name' => [
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'identification' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'birthday' => [
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' =>TRUE,
+        'default' => '',
+      ],
+      'position' => [
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'status' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+}
+
